@@ -1,13 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
+import { sub } from "./types";
+
+interface FromState {
+  inputValue : sub
+}
 
 function From() {
+interface FromState {
+  const [inputValue, setInputValue] = useState<FromState["inputValue"]>({
+    nick: "",
+    avatar: "",
+    subMonths: 0,
+    description: "",
+  });
+  const handleSumit = () => {};
+  const handlerChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    e.preventDefault();
+    setInputValue({
+      ...inputValue,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <div>
-      <form>
-        <input type="text" name="nick" placeholder="nick" />
-        <input type="text" name="avatar" placeholder="avatar" />
-        <input type="text" name="subMonths" placeholder="subMonths" />
-        <input type="text" name="description" placeholder="description" />
+      <form onSubmit={handleSumit}>
+        <input
+          onChange={handlerChange}
+          value={inputValue.nick}
+          type="text"
+          name="nick"
+          placeholder="nick"
+        />
+        <input
+          onChange={handlerChange}
+          value={inputValue.avatar}
+          type="text"
+          name="avatar"
+          placeholder="avatar"
+        />
+        <input
+          onChange={handlerChange}
+          value={inputValue.subMonths}
+          type="number"
+          name="subMonths"
+          placeholder="subMonths"
+        />
+        <textarea
+          onChange={handlerChange}
+          value={inputValue.description}
+          name="description"
+          placeholder="description"
+        />
         <button type="submit">Save new Subs</button>
       </form>
     </div>

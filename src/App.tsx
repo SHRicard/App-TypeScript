@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from "react";
-import List from "../src/Components/List";
-import From from "../src/Components/From";
+import List from "./Components/List";
+import From from "./Components/From";
+import { sub } from "./Components/types";
 import "./App.css";
 
 interface AppState {
   subs: Array<sub>;
   newSubsNumber: number;
-}
-
-interface sub {
-  nick: string;
-  avatar: string;
-  subMonths: number;
-  description?: string;
 }
 
 const INITIAL_STATE = [

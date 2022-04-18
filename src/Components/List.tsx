@@ -1,10 +1,7 @@
+import { sub } from "../Components/types";
+
 interface Props {
-  subs: Array<{
-    nick: string;
-    avatar: string;
-    subMonths: number;
-    description?: string;
-  }>;
+  subs: Array<sub>;
 }
 const List = ({ subs }: Props) => {
   return (
