@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import List from "../src/Components/List";
+import From from "../src/Components/From";
 import "./App.css";
 
 interface AppState {
@@ -46,6 +47,7 @@ function App() {
     <div className="App">
       <h1>subs</h1>
       <List subs={subs} />
+      <From />
     </div>
   );
 }
