@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { sub } from "./types";
 
-interface FromState {
-  inputValue : sub
-}
+// interface Props {
+//   number: number;
+//   nombre: string;
+// }
 
-function From() {
-interface FromState {
-  const [inputValue, setInputValue] = useState<FromState["inputValue"]>({
+const From: FC = () => {
+  const [inputValue, setInputValue] = useState<sub>({
     nick: "",
     avatar: "",
     subMonths: 0,
@@ -58,6 +58,5 @@ interface FromState {
       </form>
     </div>
   );
-}
-
+};
 export default From;
